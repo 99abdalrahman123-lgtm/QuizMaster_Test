@@ -31,3 +31,6 @@ Decomposes `Process 0` into four core functional processes (`1.0` to `4.0`) inte
 Provides a granular breakdown of `Process 3.0 (Deliver Exam & Auto-Grade)` into sub-processes `3.1` through `3.4` to enforce single-attempt validation and server-side grading.
 
 ![Level 2 Data Flow Diagram](./level-2-dfd.png)
+
+## 5. MySQL Entity-Relationship Diagram (ERD)
+![MySQL ERD](./erd-diagram.png)
