@@ -23,7 +23,7 @@ Models the entire system as a single central process (`Process 0`), defining ext
 ## 3. Level 1 Data Flow Diagram (Process Decomposition)
 Decomposes `Process 0` into four core functional processes (`1.0` to `4.0`) interacting with four persistent data stores (`D1` to `D4`).
 
-![Level 1 Data Flow Diagram](./lev![alt text](image.png)el-1-dfd.png)
+![Level 1 Data Flow Diagram](./lev![alt text](./level-1-dfd.png)el-1-dfd.png)
 
 ---
 
