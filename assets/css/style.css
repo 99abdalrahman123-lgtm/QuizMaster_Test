@@ -1,4 +1,4 @@
-/* assets/css/style.css */
+﻿/* assets/css/style.css */
 /* QuizMaster Design System - Academic Precision Theme */
 
 :root {
@@ -390,7 +390,7 @@ body {
 
 
 /* ==========================================================================
-   Dashboard / Instructor UI — Academic Precision Theme Extension
+   Dashboard / Instructor UI â€” Academic Precision Theme Extension
    QM-11: Instructor Dashboard Styles
    ========================================================================== */
 
@@ -752,5 +752,302 @@ body {
     .action-group {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+
+/* ==========================================================================
+   QM-12/14/15/16: Question Bank, Exam Interface & Result Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Question Card (used in manage_questions.php and exam.php)
+   -------------------------------------------------------------------------- */
+.question-card {
+    background-color: var(--bg-page);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.question-card:last-of-type {
+    margin-bottom: 0;
+}
+
+.question-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+}
+
+.question-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.question-text {
+    font-size: 0.925rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.55;
+    margin-bottom: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   Options List
+   -------------------------------------------------------------------------- */
+.options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: var(--text-main);
+    padding: 0.4rem 0.65rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background-color: var(--surface);
+}
+
+.option-item.option-correct {
+    background-color: var(--success-bg);
+    border-color: var(--success-border);
+    color: var(--success-text);
+    font-weight: 600;
+}
+
+.option-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--border);
+    color: var(--text-main);
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.option-correct .option-label {
+    background-color: var(--success-text);
+    color: #FFFFFF;
+}
+
+.option-correct-badge {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--success-text);
+}
+
+/* --------------------------------------------------------------------------
+   Exam Layout (2-column split workspace)
+   -------------------------------------------------------------------------- */
+.exam-layout {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.exam-questions {
+    min-width: 0;
+}
+
+.exam-sidebar {
+    position: sticky;
+    top: 76px; /* clearance below sticky topbar */
+}
+
+/* --------------------------------------------------------------------------
+   Exam Option Label (interactive radio card styling)
+   -------------------------------------------------------------------------- */
+.exam-option-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--surface);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    width: 100%;
+    user-select: none;
+}
+
+.exam-option-label:hover {
+    border-color: var(--primary);
+    background-color: var(--primary-light);
+}
+
+.exam-option-label input[type="radio"]:checked ~ .option-label {
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Result Hero Card (student/result.php)
+   -------------------------------------------------------------------------- */
+.result-hero-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    max-width: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.result-status-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.75rem;
+}
+
+.result-passed {
+    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+    border-bottom: 1px solid var(--success-border);
+}
+
+.result-failed {
+    background: linear-gradient(135deg, #FEF2F2 0%, #FECACA 100%);
+    border-bottom: 1px solid var(--error-border);
+}
+
+.result-status-icon {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.result-passed .result-status-icon,
+.result-passed .result-status-text {
+    color: var(--success-text);
+}
+
+.result-failed .result-status-icon,
+.result-failed .result-status-text {
+    color: var(--error-text);
+}
+
+.result-status-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.result-score-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.result-metric {
+    padding: 1.25rem 1rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+}
+
+.result-metric:last-child {
+    border-right: none;
+}
+
+.result-metric-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.result-metric-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.03em;
+}
+
+.result-metric-total {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.result-pct {
+    color: var(--primary);
+}
+
+.result-details {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.result-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.result-detail-label {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.result-detail-value {
+    color: var(--text-main);
+    font-weight: 500;
+    text-align: right;
+    max-width: 70%;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive: Exam layout collapses to single column < 960px
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+    .exam-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .exam-sidebar {
+        position: static;
+        order: -1;
+    }
+
+    .result-score-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-metric {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .result-metric:last-child {
+        border-bottom: none;
     }
 }

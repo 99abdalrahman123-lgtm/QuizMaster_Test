@@ -88,6 +88,7 @@ $successMsg = $successMessages[$successParam] ?? '';
             QuizMaster
         </div>
         <div class="topbar-actions">
+            <a href="/QuizMaster_Test/admin/results.php" class="btn-outline">Results &amp; Analytics</a>
             <span class="user-greeting">
                 <span class="role-tag">Instructor</span>
                 <?= $adminName ?>
