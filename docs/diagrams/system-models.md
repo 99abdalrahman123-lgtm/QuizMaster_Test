@@ -34,3 +34,30 @@ Provides a granular breakdown of `Process 3.0 (Deliver Exam & Auto-Grade)` into 
 
 ## 5. MySQL Entity-Relationship Diagram (ERD)
 ![MySQL ERD](./erd-diagram.png)
+
+---
+
+## 6. 3-Tier System Architecture Diagram
+![3-Tier System Architecture](./system-architecture.png)
+
+---
+
+## 7. High-Fidelity UI Designs
+
+### 7.1 Unified Authentication (Login & Register)
+![Authentication UI](./ui-auth.png)
+
+### 7.2 Instructor (Admin) Dashboard
+![Admin Dashboard UI](./ui-admin-dashboard.png)
+
+### 7.3 Question Bank Authoring
+![Question Bank UI](./ui-question-bank.png)
+
+### 7.4 Instructor Results & Analytics
+![Admin Results UI](./ui-admin-results.png)
+
+### 7.5 Student Portal & Join Quiz
+![Student Portal UI](./ui-student-portal.png)
+
+### 7.6 Student Exam Interface & Built-in Calculator
+![Student Exam UI](./ui-student-exam.png)
